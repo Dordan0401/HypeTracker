@@ -10,6 +10,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HypeTracker.WebMVC.Models;
 using HypeTracker.Data;
+using HypeTracker.Services;
+using HypeTracker.Models;
+using HypeTracker.Models.UserModels;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HypeTracker.WebMVC.Controllers
 {
@@ -52,6 +56,7 @@ namespace HypeTracker.WebMVC.Controllers
                 _userManager = value;
             }
         }
+
 
         //
         // GET: /Account/Login
@@ -422,6 +427,114 @@ namespace HypeTracker.WebMVC.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        public ActionResult Index()
+        {
+            var userService = new UserService();
+            var users = userService.GetAllUsers();
+
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    ctx.Roles.Add(new IdentityRole()
+            //    {
+            //        Name = "admin"
+            //    });
+            //    ctx.SaveChanges();
+            //}
+
+            var userList = users.Select(u =>
+            {
+                //Do some stuff
+
+                return new UserListItem()
+                {
+                    UserId = u.Id,
+                    UserName = u.UserName,
+                    Email = u.Email
+                };
+            }).ToList();
+            return View(userList);
+        }
+
+        public ActionResult Details(string userId)
+        {
+            ApplicationUser User = UserManager.FindById(userId);
+            var userDetailModel = new UserDetail()
+            {
+                UserName = User.UserName,
+                Email = User.Email,
+                UserId = User.Id
+            };
+            return View(userDetailModel);
+        }
+
+        public ActionResult Edit(string userId)
+        {
+            ApplicationUser user = UserManager.FindById(userId);
+            var UserRoles = UserManager.GetRoles(userId);
+            var userEditModel = new UserEdit()
+            {
+                UserId = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                IsAdmin = UserRoles.Any(r => r == "admin")
+            };
+            return View(userEditModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string userId, UserEdit model)
+        {
+            var currentUserId = User.Identity.GetUserId();
+            var currentRoles = UserManager.GetRoles(currentUserId);
+
+            var userRoles = UserManager.GetRoles(userId);
+            bool UserIsAdmin = userRoles.Any(r => r == "admin");
+
+            //if (!currentRoles.Contains("admin"))
+            //{
+            //    ModelState.AddModelError("", "You do not have permission to do this");
+            //    return View(model);
+            //}
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.UserId != userId)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            ApplicationUser user = UserManager.FindById(userId);
+            user.UserName = model.UserName;
+
+            if (model.IsAdmin)
+            {
+                UserManager.AddToRole(userId, "admin");
+            }
+
+            if (UserIsAdmin && !model.IsAdmin)
+            {
+                if (userId == currentUserId)
+                {
+                    ModelState.AddModelError("", "You cannot de-op yourself");
+                    return View(model);
+                }
+                UserManager.RemoveFromRole(userId, "admin");
+            }
+
+            if (UserManager.Update(user).Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "User could not be updated");
+            return View(model);
         }
 
         #region Helpers

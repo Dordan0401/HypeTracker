@@ -1,0 +1,74 @@
+﻿@model HypeTracker.Models.ShowModels.ShowDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShowDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PremierDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PremierDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Franchise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Franchise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaysToNextRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaysToNextRelease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnticipationValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnticipationValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

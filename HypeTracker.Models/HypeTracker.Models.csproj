@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameModels\GameCreate.cs" />
+    <Compile Include="GameModels\GameDetail.cs" />
+    <Compile Include="GameModels\GameEdit.cs" />
+    <Compile Include="GameModels\GameListItem.cs" />
+    <Compile Include="MovieModels\MovieCreate.cs" />
+    <Compile Include="MovieModels\MovieDetail.cs" />
+    <Compile Include="MovieModels\MovieEdit.cs" />
+    <Compile Include="MovieModels\MovieListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowModels\ShowCreate.cs" />
+    <Compile Include="ShowModels\ShowDetail.cs" />
+    <Compile Include="ShowModels\ShowEdit.cs" />
+    <Compile Include="ShowModels\ShowListItem.cs" />
+    <Compile Include="UserModels\UserDetail.cs" />
+    <Compile Include="UserModels\UserEdit.cs" />
+    <Compile Include="UserModels\UserListItem.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HypeTracker.Data\HypeTracker.Data.csproj">
+      <Project>{4AD9A518-952B-4AEB-A54B-FD6935A7CC5C}</Project>
+      <Name>HypeTracker.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
