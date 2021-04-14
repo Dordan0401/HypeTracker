@@ -46,6 +46,7 @@
     <Compile Include="GameModels\GameDetail.cs" />
     <Compile Include="GameModels\GameEdit.cs" />
     <Compile Include="GameModels\GameListItem.cs" />
+    <Compile Include="HomeModel.cs" />
     <Compile Include="MovieModels\MovieCreate.cs" />
     <Compile Include="MovieModels\MovieDetail.cs" />
     <Compile Include="MovieModels\MovieEdit.cs" />

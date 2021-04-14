@@ -1,0 +1,91 @@
+﻿body {
+    background-color: #f6dbd9;
+    font-family: Anton, Arial, sans-serif;
+}
+
+.navbar-header{
+    font-style: italic;
+    color: #f44336;
+    padding-left: 3rem;
+}
+
+.navbar-brand {
+    margin-top: 10px;
+    color: #f44336 !important;
+    font-size: 25px;
+    text-shadow: 3px 3px 3px black
+}
+
+    .navbar-brand:hover {
+        color: white !important;
+        text-shadow: 3px 3px 3px #920909
+    }
+
+    .navbar-brand:active {
+        text-shadow: 0px 0px 0px black;
+        transform: translate(3px, 3px)
+    }
+
+.navbar {
+    background-color: #616161;
+}
+
+.navbar-nav li a {
+    background-color: #920909;
+    margin: 10px 10px 10px 10px;
+    color: white !important;
+    box-shadow: black 2px 2px 2px 1px;
+    border-radius: 7px
+}
+
+    .navbar-nav li a:hover {
+        background-color: white !important;
+        color: #920909 !important;
+        box-shadow: #920909 2px 2px 2px 1px
+    }
+
+
+.navbar-nav li a:active {
+    box-shadow: black 0px 0px 0px 0px;
+    transform: translate(2px, 2px)
+}
+
+.topMedia {
+    background-color: #616161;
+    border-radius: 10px;
+    width: 40rem;
+}
+
+    .topMedia h3 {
+        background-color: #920909 !important;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #5e0707;
+        border-radius: 10px;
+        box-shadow: 0px 2px 2px 2px #5e0707;
+        color: white;
+        text-align: center;
+    }
+
+    div.topMedia.leftMedia{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    div.topMedia.centerMedia{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    div.topMedia.rightMedia{
+        margin-left: 15px;
+    }
+
+div.container-fluid.topRow {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > div.container-fluid.body-content {
+    margin-top: 20rem !important;
+}
