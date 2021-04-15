@@ -1,7 +1,5 @@
-﻿@model System.DateTimeOffset?
+﻿@model System.DateTimeOffset
 
 <span>
-    @(Model.HasValue ? Model.Value.LocalDateTime.ToString("d") : "-")
+    @Model.LocalDateTime.ToString("d")
 </span>
-
-

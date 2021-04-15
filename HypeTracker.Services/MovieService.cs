@@ -124,6 +124,7 @@ namespace HypeTracker.Services
                 movie.PosterUrl = model.PosterUrl;
                 movie.Title = model.Title;
                 movie.Description = model.Description;
+                movie.Genre = model.Genre;
                 movie.ReleaseDate = model.ReleaseDate;
                 movie.Franchise = model.Franchise;
                 movie.AnticipationValue = model.AnticipationValue;

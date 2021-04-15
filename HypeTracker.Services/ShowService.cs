@@ -107,6 +107,7 @@ namespace HypeTracker.Services
 
                 show.Title = model.Title;
                 show.Description = model.Description;
+                show.Genre = model.Genre;
                 show.PosterUrl = model.PosterUrl;
                 show.NextReleaseDate = model.NextReleaseDate;
                 show.Franchise = model.Franchise;

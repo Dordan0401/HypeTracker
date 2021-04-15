@@ -24,14 +24,14 @@ namespace HypeTracker.Data.Classes
         public Genre Genre { get; set; }
         [Required]
         public string Franchise { get; set; }
-        //public int DaysToNextRelease
-        //{
-        //    get
-        //    {
-        //        TimeSpan daysTill = NextReleaseDate - DateTime.Now;
-        //        return (int)daysTill.TotalDays;
-        //    }
-        //}
+        public int DaysToNextRelease
+        {
+            get
+            {
+                TimeSpan daysTill = NextReleaseDate - DateTimeOffset.Now;
+                return (int)daysTill.TotalDays;
+            }
+        }
         [Required]
         public int? AnticipationValue { get; set; }
     }

@@ -14,6 +14,7 @@ namespace HypeTracker.Models.MovieModels
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTimeOffset ReleaseDate { get; set; }
+        public Genre Genre { get; set; }
         public string Franchise { get; set; }
         public int? AnticipationValue { get; set; }
     }

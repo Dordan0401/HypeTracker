@@ -1,5 +1,4 @@
 ﻿@model HypeTracker.Models.HomeModel
-
 @{
     ViewBag.Title = "Home Page";
 }
@@ -18,14 +17,14 @@
                     <img src="@Model.topMovie.PosterUrl" alt="No Poster" class="poster" />
                     <div class="description">
                         <h4><u>Description</u></h4>
-                        <p>@Model.topMovie.Description</p>
+                        <p>@Html.DisplayFor(Model => Model.topMovie.Description)</p>
                     </div>
 
                 </div>
                 <ul class="title-info">
-                    <li>Title: @Model.topMovie.Title</li>
-                    <li>Release Date: @Model.topMovie.ReleaseDate</li>
-                    <li>Franchise: @Model.topMovie.Franchise</li>
+                    <li>Title: @Html.DisplayFor(Model => Model.topMovie.Title)</li>
+                    <li>Release Date: @Html.DisplayFor(Model => Model.topMovie.ReleaseDate)</li>
+                    <li>Franchise: @Html.DisplayFor(Model => Model.topMovie.Franchise)</li>
                 </ul>
                 <p>@Html.ActionLink("More details", "Details", "Movie", new { id = Model.topMovie.Id }, new { @class = "details btn-default" })</p>
             }
@@ -42,14 +41,14 @@
                     <img src="@Model.topGame.PosterUrl" alt="No Poster" class="poster" />
                     <div class="description">
                         <h4><u>Description</u></h4>
-                        <p>@Model.topGame.Description</p>
+                        <p>@Html.DisplayFor(Model => Model.topGame.Description)</p>
                     </div>
 
                 </div>
                 <ul class="title-info">
-                    <li>Title: @Model.topGame.Title</li>
-                    <li>Release Date: @Model.topGame.ReleaseDate</li>
-                    <li>Dev Studio: @Model.topGame.DevStudio</li>
+                    <li>Title: @Html.DisplayFor(Model => Model.topGame.Title)</li>
+                    <li>Release Date: @Html.DisplayFor(Model => Model.topGame.ReleaseDate)</li>
+                    <li>Dev Studio: @Html.DisplayFor(Model => Model.topGame.DevStudio)</li>
                 </ul>
                 <p>@Html.ActionLink("More details", "Details", "Game", new { id = Model.topGame.Id }, new { @class = "details btn-default" })</p>
             }
@@ -66,14 +65,14 @@
                     <img src="@Model.topShow.PosterUrl" alt="No Poster" class="poster" />
                     <div class="description">
                         <h4><u>Description</u></h4>
-                        <p>@Model.topShow.Description</p>
+                        <p>@Html.DisplayFor(Model => Model.topShow.Description)</p>
                     </div>
 
                 </div>
                 <ul class="title-info">
-                    <li>Title: @Model.topShow.Title</li>
-                    <li>Next Release Date: @Model.topShow.NextReleaseDate</li>
-                    <li>Franchise: @Model.topShow.Franchise</li>
+                    <li>Title: @Html.DisplayFor(Model => Model.topShow.Title)</li>
+                    <li>Next Release Date: @Html.DisplayFor(Model => Model.topShow.NextReleaseDate)</li>
+                    <li>Franchise: @Html.DisplayFor(Model => Model.topShow.Franchise)</li>
                 </ul>
                 <p>@Html.ActionLink("More details", "Details", "Show", new { id = Model.topShow.Id }, new { @class = "details btn-default" })</p>
             }
