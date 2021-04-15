@@ -105,6 +105,7 @@ namespace HypeTracker.WebMVC.Controllers
                 Id = detail.Id,
                 Title = detail.Title,
                 Description = detail.Description,
+                PosterUrl = detail.PosterUrl,
                 ReleaseDate = detail.ReleaseDate,
                 DevStudio = detail.DevStudio,
                 AnticipationValue = detail.AnticipationValue

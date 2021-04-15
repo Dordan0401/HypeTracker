@@ -29,6 +29,7 @@ namespace HypeTracker.Services
                 MovieListItem movieItem = new MovieListItem()
                 {
                     Id = movie.Id,
+                    PosterUrl = movie.PosterUrl,
                     Title = movie.Title,
                     Description = movie.Description,
                     Franchise = movie.Franchise,
@@ -55,10 +56,11 @@ namespace HypeTracker.Services
                 ShowListItem showItem = new ShowListItem()
                 {
                     Id = show.Id,
+                    PosterUrl = show.PosterUrl,
                     Title = show.Title,
                     Description = show.Description,
                     Franchise = show.Franchise,
-                    NextReleaseDate = show.NextReleaseDate
+                    PremierDate = show.PremierDate,
                 };
 
                 return showItem;
@@ -81,6 +83,7 @@ namespace HypeTracker.Services
                 GameListItem gameItem = new GameListItem()
                 {
                     Id = game.Id,
+                    PosterUrl = game.PosterUrl,
                     Title = game.Title,
                     Description = game.Description,
                     DevStudio = game.DevStudio,

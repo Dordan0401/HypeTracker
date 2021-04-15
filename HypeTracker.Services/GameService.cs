@@ -17,6 +17,7 @@ namespace HypeTracker.Services
             {
                 Title = model.Title,
                 Description = model.Description,
+                PosterUrl = model.PosterUrl,
                 ReleaseDate = model.ReleaseDate,
                 Genre = model.Genre,
                 DevStudio = model.DevStudio,
@@ -41,6 +42,7 @@ namespace HypeTracker.Services
                                  Id = g.Id,
                                  Title = g.Title,
                                  Description = g.Description,
+                                 PosterUrl = g.PosterUrl,
                                  DevStudio = g.DevStudio,
                                  ReleaseDate = g.ReleaseDate
                              });
@@ -61,6 +63,7 @@ namespace HypeTracker.Services
                                  Id = g.Id,
                                  Title = g.Title,
                                  Description = g.Description,
+                                 PosterUrl = g.PosterUrl,
                                  DevStudio = g.DevStudio,
                                  ReleaseDate = g.ReleaseDate
                              });
@@ -80,6 +83,7 @@ namespace HypeTracker.Services
                 var gameDetail = new GameDetail()
                 {
                     Id = game.Id,
+                    PosterUrl = game.PosterUrl,
                     Title = game.Title,
                     Description = game.Description,
                     DevStudio = game.DevStudio,
@@ -101,6 +105,7 @@ namespace HypeTracker.Services
                             .Games
                             .Single(g => g.Id == model.Id);
 
+                game.PosterUrl = model.PosterUrl;
                 game.Title = model.Title;
                 game.Description = model.Description;
                 game.ReleaseDate = model.ReleaseDate;

@@ -51,7 +51,6 @@ namespace HypeTracker.WebMVC.Controllers
 
             if (service.CreateShow(model))
             {
-                TempData["SaveResult"] = $"{model.Title} was added successfully!";
                 return RedirectToAction("AllShows");
             }
 
@@ -106,6 +105,7 @@ namespace HypeTracker.WebMVC.Controllers
                 Id = detail.Id,
                 Title = detail.Title,
                 Description = detail.Description,
+                PosterUrl = detail.PosterUrl,
                 NextReleaseDate = detail.NextReleaseDate,
                 Franchise = detail.Franchise,
                 AnticipationValue = detail.AnticipationValue
@@ -133,7 +133,6 @@ namespace HypeTracker.WebMVC.Controllers
 
             if (service.UpdateShow(model))
             {
-                TempData["SaveResult"] = $"{model.Title} was updated";
                 return RedirectToAction("AllShows");
             }
 

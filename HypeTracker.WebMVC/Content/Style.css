@@ -3,7 +3,7 @@
     font-family: Anton, Arial, sans-serif;
 }
 
-.navbar-header{
+.navbar-header {
     font-style: italic;
     color: #f44336;
     padding-left: 3rem;
@@ -45,15 +45,16 @@
     }
 
 
-.navbar-nav li a:active {
-    box-shadow: black 0px 0px 0px 0px;
-    transform: translate(2px, 2px)
-}
+    .navbar-nav li a:active {
+        box-shadow: black 0px 0px 0px 0px;
+        transform: translate(2px, 2px)
+    }
 
 .topMedia {
     background-color: #616161;
     border-radius: 10px;
-    width: 40rem;
+    height: auto;
+    box-shadow: black 0px 3px 1px 2px;
 }
 
     .topMedia h3 {
@@ -67,25 +68,107 @@
         text-align: center;
     }
 
-    div.topMedia.leftMedia{
-        margin-right: 15px;
-        margin-left: 15px;
+    @media (max-width: 1000px){
+        .topMedia h3{
+            margin-top: 10px;
+        }
     }
-    
+
+div.topMedia.centerMedia {
+    margin-right: 60px !important;
+    margin-left: 60px !important;
+}
+
+@media (max-width: 1000px){
     div.topMedia.centerMedia{
-        margin-right: 15px;
-        margin-left: 15px;
+        margin-right: auto !important;
+        margin-left: auto !important;
     }
-    
-    div.topMedia.rightMedia{
-        margin-left: 15px;
+
+    div.topMedia.col-md-3{
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 10px !important;
+
     }
+}
 
 div.container-fluid.topRow {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10rem;
+}
+
+.poster {
+    position: relative;
+    width: 125px;
+    height: 187.5px;
+    margin-top: 5px;
+    margin-left: 15px;
+    box-shadow: 0px 3px 2px 1px #5e0707;
+    border-radius: 1px;
+}
+
+@media (max-width: 1500px) {
+    .poster {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+.title-info {
+    color: #f44336;
+    list-style-type: none;
+    margin-top: 5px;
+    padding-left: 0px !important;
+    text-shadow: 3px 3px 3px black
+}
+
+.row .description {
+    background-color: #920909;
+    padding: 5px;
+    color: white;
+    float: right;
+    text-align: left;
+    box-shadow: 0px 2px 2px 2px #5e0707;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 8rem !important;
+    width: 50%;
+    height: 50% !important;
+}
+
+.details {
+    position: relative;
+    float: right;
+    background-color: #920909;
+    color: white !important;
+    box-shadow: #5e0707 2px 2px 2px 1px;
+    border-radius: 7px;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    padding: 5px;
+}
+
+    .details:hover {
+        background-color: white !important;
+        color: #920909 !important;
+        box-shadow: #920909 2px 2px 2px 1px
+    }
+
+    .details:active {
+        box-shadow: 0px 0px;
+        transform: translate(2px, 2px);
+    }
+
+@media (max-width: 1000px){
+    .details{
+        transform: translate(0px, -35px) !important;
+    }
 }
 
 body > div.container-fluid.body-content {
-    margin-top: 20rem !important;
+    margin-top: 5rem !important;
 }

@@ -11,12 +11,13 @@ namespace HypeTracker.Models.MovieModels
 {
     public class MovieCreate
     {
+        public string PosterUrl { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
-        public DateTime ReleaseDate { get; set; }
+        public DateTimeOffset ReleaseDate { get; set; }
         [Required]
         public Genre Genre { get; set; }
         [Required]

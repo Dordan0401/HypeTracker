@@ -11,26 +11,27 @@ namespace HypeTracker.Data.Classes
     {
         [Key]
         public int Id { get; set; }
+        public string PosterUrl { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
-        public DateTime PremierDate { get; set; }
+        public DateTimeOffset PremierDate { get; set; }
         [Required]
-        public DateTime NextReleaseDate { get; set; }
+        public DateTimeOffset NextReleaseDate { get; set; }
         [Required]
         public Genre Genre { get; set; }
         [Required]
         public string Franchise { get; set; }
-        public int DaysToNextRelease
-        {
-            get
-            {
-                TimeSpan daysTill = NextReleaseDate - DateTime.Now;
-                return (int)daysTill.TotalDays;
-            }
-        }
+        //public int DaysToNextRelease
+        //{
+        //    get
+        //    {
+        //        TimeSpan daysTill = NextReleaseDate - DateTime.Now;
+        //        return (int)daysTill.TotalDays;
+        //    }
+        //}
         [Required]
         public int? AnticipationValue { get; set; }
     }

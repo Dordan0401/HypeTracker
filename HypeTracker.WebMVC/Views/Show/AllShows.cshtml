@@ -4,7 +4,7 @@
     ViewBag.Title = "AllShows";
 }
 
-<h2>AllShows</h2>
+<h2>All Shows</h2>
 @if (User.IsInRole("admin"))
 {
     <p>
@@ -12,16 +12,7 @@
     </p>
 }
 
-@if (TempData.ContainsKey("ShowSave"))
-{
-    <div class="alert alert-success fade in" role="alert">
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-
-    </div>
-}
 <table class="table">
     <tr>
         <th>
@@ -54,11 +45,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Franchise)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
+            @if (User.IsInRole("admin"))
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                </td>
+            }
         </tr>
     }
 

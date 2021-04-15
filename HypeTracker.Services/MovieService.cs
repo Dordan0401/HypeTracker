@@ -15,6 +15,7 @@ namespace HypeTracker.Services
         {
             Movie newMovie = new Movie()
             {
+                PosterUrl = model.PosterUrl,
                 Title = model.Title,
                 Description = model.Description,
                 ReleaseDate = model.ReleaseDate,
@@ -39,6 +40,7 @@ namespace HypeTracker.Services
                              .Select(m => new MovieListItem
                              {
                                  Id = m.Id,
+                                 PosterUrl = m.PosterUrl,
                                  Title = m.Title,
                                  Description = m.Description,
                                  Franchise = m.Franchise,
@@ -75,6 +77,7 @@ namespace HypeTracker.Services
                              .Select(m => new MovieListItem
                              {
                                  Id = m.Id,
+                                 PosterUrl = m.PosterUrl,
                                  Title = m.Title,
                                  Description = m.Description,
                                  Franchise = m.Franchise,
@@ -96,6 +99,7 @@ namespace HypeTracker.Services
                 var movieDetail = new MovieDetail()
                 {
                     Id = movie.Id,
+                    PosterUrl = movie.PosterUrl,
                     Title = movie.Title,
                     Description = movie.Description,
                     Franchise = movie.Franchise,
@@ -117,6 +121,7 @@ namespace HypeTracker.Services
                             .Movies
                             .Single(m => m.Id == model.Id);
 
+                movie.PosterUrl = model.PosterUrl;
                 movie.Title = model.Title;
                 movie.Description = model.Description;
                 movie.ReleaseDate = model.ReleaseDate;

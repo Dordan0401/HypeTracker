@@ -13,12 +13,13 @@ namespace HypeTracker.Data.Classes
     {
         [Key]
         public int Id { get; set; }
+        public string PosterUrl { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
-        public DateTime ReleaseDate { get; set; }
+        public DateTimeOffset ReleaseDate { get; set; }
         public int DaysToRelease
         {
             get

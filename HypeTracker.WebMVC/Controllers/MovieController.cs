@@ -58,7 +58,6 @@ namespace HypeTracker.WebMVC.Controllers
 
             if (service.CreateMovie(model))
             {
-                TempData["SaveResult"] = $"{model.Title} was added successfully!";
                 return RedirectToAction("AllMovies");
             }
 
@@ -111,6 +110,7 @@ namespace HypeTracker.WebMVC.Controllers
             MovieEdit movie = new MovieEdit()
             {
                 Id = detail.Id,
+                PosterUrl = detail.PosterUrl,
                 Title = detail.Title,
                 Description = detail.Description,
                 ReleaseDate = detail.ReleaseDate,
@@ -140,7 +140,6 @@ namespace HypeTracker.WebMVC.Controllers
 
             if (service.UpdateMovie(model))
             {
-                TempData["SaveResult"] = $"{model.Title} was updated";
                 return RedirectToAction("AllMovies");
             }
 

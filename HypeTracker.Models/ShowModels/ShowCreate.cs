@@ -11,22 +11,30 @@ namespace HypeTracker.Models.ShowModels
 {
     public class ShowCreate
     {
+        public string PosterUrl { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
-        public DateTime PremierDate { get; set; }
-        public DateTime NextReleaseDate
+        public DateTimeOffset PremierDate { get; set; }
+        public DateTimeOffset NextReleaseDate
         {
             get
             {
+                DateTimeOffset nextDate = PremierDate;
+
                 if (DateTime.Today < PremierDate)
-                {
+                { 
                     return PremierDate;
                 }
 
-                return PremierDate.AddDays(7);
+                while (DateTime.Today >= nextDate)
+                {
+                    nextDate = nextDate.AddDays(7);
+                }
+
+                return nextDate;
             }
         }
         [Required]

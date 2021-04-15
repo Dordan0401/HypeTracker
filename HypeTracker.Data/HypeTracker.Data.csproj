@@ -69,6 +69,18 @@
     <Compile Include="Migrations\202104121754200_Fixing-Shows.Designer.cs">
       <DependentUpon>202104121754200_Fixing-Shows.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104141855388_PosterUrl.cs" />
+    <Compile Include="Migrations\202104141855388_PosterUrl.Designer.cs">
+      <DependentUpon>202104141855388_PosterUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104142359145_more-posters.cs" />
+    <Compile Include="Migrations\202104142359145_more-posters.Designer.cs">
+      <DependentUpon>202104142359145_more-posters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151355368_DateTimeUpdate.cs" />
+    <Compile Include="Migrations\202104151355368_DateTimeUpdate.Designer.cs">
+      <DependentUpon>202104151355368_DateTimeUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Show.cs" />
@@ -86,6 +98,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104121754200_Fixing-Shows.resx">
       <DependentUpon>202104121754200_Fixing-Shows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141855388_PosterUrl.resx">
+      <DependentUpon>202104141855388_PosterUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104142359145_more-posters.resx">
+      <DependentUpon>202104142359145_more-posters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151355368_DateTimeUpdate.resx">
+      <DependentUpon>202104151355368_DateTimeUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

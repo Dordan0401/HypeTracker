@@ -17,8 +17,8 @@ namespace HypeTracker.Services
             {
                 Title = model.Title,
                 Description = model.Description,
+                PosterUrl = model.PosterUrl,
                 PremierDate = model.PremierDate,
-                NextReleaseDate = model.NextReleaseDate,
                 Genre = model.Genre,
                 Franchise = model.Franchise,
                 AnticipationValue = model.AnticipationValue
@@ -42,8 +42,9 @@ namespace HypeTracker.Services
                                  Id = s.Id,
                                  Title = s.Title,
                                  Description = s.Description,
+                                 PosterUrl = s.PosterUrl,
                                  Franchise = s.Franchise,
-                                 NextReleaseDate = s.NextReleaseDate
+                                 PremierDate = s.PremierDate
                              });
 
                 return shows.ToArray();
@@ -62,8 +63,9 @@ namespace HypeTracker.Services
                                  Id = s.Id,
                                  Title = s.Title,
                                  Description = s.Description,
+                                 PosterUrl = s.PosterUrl,
                                  Franchise = s.Franchise,
-                                 NextReleaseDate = s.NextReleaseDate
+                                 PremierDate = s.PremierDate
                              });
 
                 return shows.ToArray();
@@ -83,12 +85,13 @@ namespace HypeTracker.Services
                     Id = show.Id,
                     Title = show.Title,
                     Description = show.Description,
+                    PosterUrl = show.PosterUrl,
                     Franchise = show.Franchise,
                     Genre = show.Genre,
                     PremierDate = show.PremierDate,
-                    DaysToNextRelease = show.DaysToNextRelease,
                     AnticipationValue = show.AnticipationValue
                 };
+
 
                 return showDetail;
             }
@@ -104,6 +107,7 @@ namespace HypeTracker.Services
 
                 show.Title = model.Title;
                 show.Description = model.Description;
+                show.PosterUrl = model.PosterUrl;
                 show.NextReleaseDate = model.NextReleaseDate;
                 show.Franchise = model.Franchise;
                 show.AnticipationValue = model.AnticipationValue;
