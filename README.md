@@ -1,4 +1,5 @@
 # HypeTracker
+hypetracker.azurewebsites.net
 
 ## *About*
 HypeTracker is a platform for users to track upcoming Movies, TV Shows, and Games.
